@@ -6,7 +6,6 @@ import java.util.Map;
 
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
-import com.sun.istack.internal.NotNull;
 
 public class JSONUtil {
     private static Gson gson;
