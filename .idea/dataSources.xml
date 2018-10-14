@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="MariaDB - timetables@localhost" uuid="d5a69e6a-7a85-49be-9001-e62202b60f0b">
+    <data-source source="LOCAL" name="timetables@localhost" uuid="66403f18-8193-4430-b333-93822441d738">
       <driver-ref>mariadb</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>

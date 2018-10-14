@@ -30,8 +30,8 @@ public class GetUserInfo extends HttpServlet {
         ServletOutputStream out=response.getOutputStream();
         try {
             //获取Cookie
-            String usernameCookie = CookieUtil.getCookie(request, "username");
-            String passwordCookie = CookieUtil.getCookie(request, "password");
+            String usernameCookie = CookieUtil.getCookieValue(request, "username");
+            String passwordCookie = CookieUtil.getCookieValue(request, "password");
 
             //判断Cookie是否存在
             if(!usernameCookie.equals("") && !passwordCookie.equals("")) {

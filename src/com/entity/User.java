@@ -35,9 +35,7 @@ public class User {
         password = pw;
     }
 
-    public String getBelong() {
-        return belong;
-    }
+    public String getBelong() { return belong; }
 
     public void setBelong(String bl) {
         belong = bl;

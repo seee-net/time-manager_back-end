@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="MariaDB - timetables@localhost" uuid="d5a69e6a-7a85-49be-9001-e62202b60f0b">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" family="MARIADB" exact-version="0.0" />
+    <data-source name="timetables@localhost" uuid="66403f18-8193-4430-b333-93822441d738">
+      <database-info product="MySQL" version="10.1.31-MariaDB" jdbc-version="4.2" driver-name="MariaDB connector/J" driver-version="2.2.1" family="MARIADB" exact-version="10.1.31">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
       <introspection-schemas>*:@</introspection-schemas>
     </data-source>
   </component>
