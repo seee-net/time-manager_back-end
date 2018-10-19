@@ -1,11 +1,8 @@
-
 package com.dao;
-
-//TODO 实现类
 
 import com.dao.impl.DataDao;
 import com.entity.Room;
-import com.entity.data;
+import com.entity.Data;
 import com.util.DBconn;
 import com.util.FormDate;
 
@@ -24,7 +21,6 @@ public class DataDaoImpl implements DataDao {
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
-
 
         try {
             conn = DBconn.getConnection();
@@ -54,7 +50,7 @@ public class DataDaoImpl implements DataDao {
         }
     }
 
-    public boolean Apply(data newdata){
+    public boolean Apply(Data newdata){
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -87,13 +83,13 @@ public class DataDaoImpl implements DataDao {
     }
 
     @Override
-    public List<data> byRoom(String aimRoom_id) {
+    public List<Data> byRoom(String aimRoom_id) {
         //数据库设置
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
 
-        List<data> aimdata = new ArrayList<>();
+        List<Data> aimdata = new ArrayList<>();
 
         delOldDate();
         try {
@@ -108,7 +104,7 @@ public class DataDaoImpl implements DataDao {
             rs = stmt.executeQuery();
 
             while (rs.next()){
-                data dataInDB = new data();
+                Data dataInDB = new Data();
                 dataInDB.setUsername(rs.getString("username"));
                 dataInDB.setRoom_id(aimRoom_id);
                 dataInDB.setTime_start( rs.getString("time_start") );
@@ -126,14 +122,14 @@ public class DataDaoImpl implements DataDao {
     }
 
     @Override
-    public List<data> byTime(String aimTimeStart,String aimTimeEnd) {
+    public List<Data> byTime(String aimTimeStart,String aimTimeEnd) {
 
         //数据库设置
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
 
-        List<data> aimdata = new ArrayList<>();
+        List<Data> aimdata = new ArrayList<>();
 
         delOldDate();
         try {
@@ -149,7 +145,7 @@ public class DataDaoImpl implements DataDao {
             rs = stmt.executeQuery();
 
             while (rs.next()){
-                data dataInDB = new data();
+                Data dataInDB = new Data();
                 dataInDB.setUsername(rs.getString("username"));
                 dataInDB.setRoom_id(rs.getString("room_id"));
                 dataInDB.setTime_start( rs.getString("time_start") );
@@ -199,14 +195,14 @@ public class DataDaoImpl implements DataDao {
     }
 
 
-    public List<data> getUserData(String username) {
+    public List<Data> getUserData(String username) {
 
         //数据库设置
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
 
-        List<data> aimdata = new ArrayList<>();
+        List<Data> aimdata = new ArrayList<>();
 
         delOldDate();
         try {
@@ -221,7 +217,7 @@ public class DataDaoImpl implements DataDao {
             rs = stmt.executeQuery();
 
             while (rs.next()){
-                data dataInDB = new data();
+                Data dataInDB = new Data();
                 dataInDB.setUsername(rs.getString("username"));
                 dataInDB.setRoom_name(rs.getString("room_name"));
                 dataInDB.setTime_start( rs.getString("time_start") );

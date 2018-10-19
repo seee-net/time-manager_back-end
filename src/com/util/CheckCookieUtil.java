@@ -7,8 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.net.URLDecoder;
 
-//TODO 利用Cookie验证身份
-
 public class CheckCookieUtil {
     /**
      * 检查cookie对不对

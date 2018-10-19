@@ -43,7 +43,6 @@ public class Login extends HttpServlet {
         if(!usernameCookie.equals("") && !passwordCookie.equals("")) {
             System.out.println("Login:检测存在Cookie");
             //Cookie存在
-            //TODO 替换（工具类）
             //比对数据库中内容
             String username = URLDecoder.decode(usernameCookie, "UTF-8");
             System.out.println("Login:解码后的用户名" + username);

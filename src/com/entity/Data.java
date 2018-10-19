@@ -1,13 +1,13 @@
 package com.entity;
 
-public class data {
+public class Data {
     private String username;
     private String room_id;
     private String room_name;
     private String time_start;
     private String time_end;
 
-    public data()  {
+    public Data()  {
         username = "";
         room_id = "";
     }

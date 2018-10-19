@@ -28,7 +28,6 @@ public class GetAllUsers extends HttpServlet {
         ServletInputStream in =request.getInputStream();
         ServletOutputStream out=response.getOutputStream();
         try {
-            //TODO 验证Cookie
             System.out.println("GetAllUsers:正在返回JSON数据");
             List allUsersList = new UserDaoImpl().getAllUsers();
 

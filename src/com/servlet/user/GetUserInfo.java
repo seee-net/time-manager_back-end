@@ -43,7 +43,6 @@ public class GetUserInfo extends HttpServlet {
                 User userInDB = new UserDaoImpl().getUser(username);
                 System.out.println("GetUserInfo:正在比对Cookie中的密码");
                 //比对用户密码
-                //TODO 验证Cookie
                 if(passwordCookie.equals(userInDB.getPassword())){
                     //密码正确
                     //返回JSON数据

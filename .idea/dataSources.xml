@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="timetables@localhost" uuid="34962cbd-92b5-4813-ba8b-ac953230fe8d">
+    <data-source source="LOCAL" name="timetables@localhost" uuid="dbc20ba3-ed45-4e47-9bfe-a36ab6a80e5f">
       <driver-ref>mariadb</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>

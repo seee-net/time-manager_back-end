@@ -4,7 +4,7 @@ import com.dao.DataDaoImpl;
 import com.util.CheckCookieUtil;
 import com.util.JSONUtil;
 import com.util.StreamUtil;
-import com.entity.data;
+import com.entity.Data;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletInputStream;
@@ -42,7 +42,7 @@ public class Apply extends HttpServlet{
             //json转化格式,Date在java.util中，写入数据库可以储存到秒
             Map<String, Object> dataReceive = JSONUtil.jsonToMaps(jsonReceive);
 
-            data newdata = new data();
+            Data newdata = new Data();
 
             for (String key : dataReceive.keySet()) {
                 switch (key) {

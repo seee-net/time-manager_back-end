@@ -57,8 +57,6 @@ public class ChPass extends HttpServlet {
                     String oldPassword = "";
                     String newPassword = "";
 
-                    //TODO 替换（工具类）
-
                     for(String key : dataReceive.keySet()){
                         switch (key){
                             case "oldPassword": {
