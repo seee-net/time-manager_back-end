@@ -2,7 +2,6 @@ package com.servlet.user;
 
 import com.dao.UserDaoImpl;
 import com.entity.User;
-
 import com.util.StreamUtil;
 import com.util.JSONUtil;
 import com.util.CookieUtil;
@@ -37,14 +36,13 @@ public class Login extends HttpServlet {
         ServletOutputStream out=response.getOutputStream();
 
         //获取Cookie
-        String usernameCookie = CookieUtil.getCookie(request, "username");
-        String passwordCookie = CookieUtil.getCookie(request, "password");
+        String usernameCookie = CookieUtil.getCookieValue(request, "username");
+        String passwordCookie = CookieUtil.getCookieValue(request, "password");
 
         //判断Cookie是否存在
         if(!usernameCookie.equals("") && !passwordCookie.equals("")) {
             System.out.println("Login:检测存在Cookie");
             //Cookie存在
-            //TODO 替换（工具类）
             //比对数据库中内容
             String username = URLDecoder.decode(usernameCookie, "UTF-8");
             System.out.println("Login:解码后的用户名" + username);

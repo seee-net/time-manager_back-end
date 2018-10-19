@@ -1,7 +1,6 @@
 package com.servlet.user;
 
 import com.dao.UserDaoImpl;
-
 import com.util.StreamUtil;
 import com.util.JSONUtil;
 
@@ -15,13 +14,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "GetAllUsers", urlPatterns = "/GetAllUsers")
+@WebServlet(name = "GetAllUsers")
 public class GetAllUsers extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json;charset=utf-8");
@@ -29,7 +27,6 @@ public class GetAllUsers extends HttpServlet {
         ServletInputStream in =request.getInputStream();
         ServletOutputStream out=response.getOutputStream();
         try {
-            //TODO 验证Cookie
             System.out.println("GetAllUsers:正在返回JSON数据");
             List allUsersList = new UserDaoImpl().getAllUsers();
 

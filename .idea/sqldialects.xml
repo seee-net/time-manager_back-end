@@ -2,5 +2,10 @@
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/src/com/dao/UserDaoImpl.java" dialect="MariaDB" />
+    <file url="PROJECT" dialect="MySQL" />
+  </component>
+  <component name="SqlResolveMappings">
+    <file url="file://$PROJECT_DIR$/src/com/dao/DataDaoImpl.java" scope="{&quot;node&quot;:{  &quot;@negative&quot;:&quot;1&quot;,  &quot;group&quot;:{   &quot;@kind&quot;:&quot;root&quot;,   &quot;node&quot;:{    &quot;name&quot;:{     &quot;@name&quot;:&quot;dbc20ba3-ed45-4e47-9bfe-a36ab6a80e5f&quot;,     &quot;@quoted&quot;:&quot;1&quot;    }   }  } }}" />
+    <file url="PROJECT" scope="{&quot;node&quot;:{  &quot;@negative&quot;:&quot;1&quot;,  &quot;group&quot;:{   &quot;@kind&quot;:&quot;root&quot;,   &quot;node&quot;:{    &quot;name&quot;:{     &quot;@name&quot;:&quot;dbc20ba3-ed45-4e47-9bfe-a36ab6a80e5f&quot;,     &quot;@quoted&quot;:&quot;1&quot;    }   }  } }}" />
   </component>
 </project>

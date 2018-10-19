@@ -9,17 +9,13 @@ import javax.servlet.http.HttpServletResponse;
  *
  */
 public class CookieUtil {
-
-    private CookieUtil() {
-    }
-
     /**
      * 添加cookie
      *
      * @param response 响应
-     * @param name Cookie名称
-     * @param value Cookie值
-     * @param maxAge 保留期限
+     * @param name     Cookie名称
+     * @param value    Cookie值
+     * @param maxAge   保留期限
      */
     public static void addCookie(HttpServletResponse response, String name, String value, int maxAge) {
         Cookie cookie = new Cookie(name, value);
@@ -34,7 +30,7 @@ public class CookieUtil {
      * 删除cookie
      *
      * @param response 响应
-     * @param name Cookie名称
+     * @param name     Cookie名称
      */
     public static void removeCookie(HttpServletResponse response, String name) {
         Cookie uid = new Cookie(name, null);
@@ -49,9 +45,9 @@ public class CookieUtil {
      * @param request 请求
      * @return 返回Cookie值
      */
-    public static String getCookie(HttpServletRequest request,String cookieName) {
+    public static String getCookieValue(HttpServletRequest request, String cookieName) {
         Cookie cookies[] = request.getCookies();
-        if(cookies != null) {
+        if (cookies != null) {
             for (Cookie cookie : cookies) {
                 if (cookie.getName().equals(cookieName)) {
                     return cookie.getValue();

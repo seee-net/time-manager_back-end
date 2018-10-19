@@ -2,7 +2,6 @@ package com.servlet.user;
 
 import com.dao.UserDaoImpl;
 import com.entity.User;
-
 import com.util.StreamUtil;
 import com.util.JSONUtil;
 

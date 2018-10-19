@@ -6,7 +6,6 @@ import com.entity.User;
 import com.util.CookieUtil;
 import com.util.StreamUtil;
 import com.util.JSONUtil;
-import com.util.MD5sett;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletInputStream;
@@ -36,8 +35,8 @@ public class ChPass extends HttpServlet {
 
         try {
             //获取Cookie
-            String usernameCookie = CookieUtil.getCookie(request, "username");
-            String passwordCookie = CookieUtil.getCookie(request, "password");
+            String usernameCookie = CookieUtil.getCookieValue(request, "username");
+            String passwordCookie = CookieUtil.getCookieValue(request, "password");
 
             //判断Cookie是否存在
             if(!usernameCookie.equals("") && !passwordCookie.equals("")) {
@@ -57,8 +56,6 @@ public class ChPass extends HttpServlet {
                     Map<String, String> dataReceive = JSONUtil.jsonToMaps(jsonReceive);
                     String oldPassword = "";
                     String newPassword = "";
-
-                    //TODO 替换（工具类）
 
                     for(String key : dataReceive.keySet()){
                         switch (key){
