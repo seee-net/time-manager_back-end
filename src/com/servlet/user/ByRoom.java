@@ -2,6 +2,7 @@ package com.servlet.user;
 
 import com.dao.DataDaoImpl;
 import com.entity.data;
+import com.util.CheckCookieUtil;
 import com.util.CookieUtil;
 import com.util.JSONUtil;
 import com.util.StreamUtil;
@@ -38,7 +39,7 @@ public class ByRoom extends HttpServlet {
 
         List aimdata;
 
-        if (CookieUtil.isCookieRight(request, out)) {
+        if (CheckCookieUtil.isCookieRight(request)) {
             //前台传来json
             String jsonReceive = StreamUtil.getInput(in);
             //json转化格式,Date在java.util中，写入数据库可以储存到秒
@@ -61,7 +62,7 @@ public class ByRoom extends HttpServlet {
 
             StreamUtil.setOutput(out, jsonSend);
         } else {
-            System.out.println("Cookie验证失败，重新登陆");
+            System.out.println("By_room:Cookie验证失败，重新登陆");
             StreamUtil.setOutput(out, "");
         }
     }

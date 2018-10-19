@@ -1,6 +1,7 @@
 package com.servlet.user;
 
 import com.dao.DataDaoImpl;
+import com.util.CheckCookieUtil;
 import com.util.CookieUtil;
 import com.util.JSONUtil;
 import com.util.StreamUtil;
@@ -38,7 +39,7 @@ public class Apply extends HttpServlet{
         ServletInputStream in = request.getInputStream();
         ServletOutputStream out = response.getOutputStream();
 
-        if (CookieUtil.isCookieRight(request, out)) {
+        if (CheckCookieUtil.isCookieRight(request)) {
             //前台传来json
             String jsonReceive = StreamUtil.getInput(in);
             //json转化格式,Date在java.util中，写入数据库可以储存到秒
@@ -83,7 +84,7 @@ public class Apply extends HttpServlet{
 
             StreamUtil.setOutput(out, jsonSend);
         } else {
-            System.out.println("Cookie验证失败，重新登陆");
+            System.out.println("Apply:Cookie验证失败，重新登陆");
             new DataDaoImpl().delOldDate();
             StreamUtil.setOutput(out, "");
         }

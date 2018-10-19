@@ -12,6 +12,7 @@ import java.sql.*;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -43,7 +44,7 @@ public class DataDaoImpl implements DataDao {
                     "Where time_end < ?";
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, year+month+day+hour+minute+second);
-            stmt.executeUpdate(sql) ;
+            stmt.executeUpdate() ;
 
         } catch (SQLException e) {
             System.err.println("DAO: 数据库错误");
@@ -165,6 +166,35 @@ public class DataDaoImpl implements DataDao {
         return aimdata;
     }
 
+    public HashMap<Integer,String> getRoom(){
+        //数据库设置
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        HashMap<Integer, String> roomData = new HashMap<>();
+        try {
+            conn = DBconn.getConnection();
+
+            String sql = "select * from all_room " ;
+
+            stmt = conn.prepareStatement(sql);
+
+            rs = stmt.executeQuery();
+
+            while (rs.next()){
+                roomData.put( rs.getInt("room_id"),  rs.getString("room_name") );
+            }
+        } catch (SQLException e){
+            System.err.println("DAO: 数据库错误");
+            e.printStackTrace();
+        } finally {
+            DBconn.closeAll(conn, stmt, rs);
+        }
+        return roomData;
+    }
+
+
     public List<data> getUserData(String username) {
 
         //数据库设置
@@ -178,8 +208,8 @@ public class DataDaoImpl implements DataDao {
         try {
             conn = DBconn.getConnection();
 
-            String sql = "select * from user_room " +
-                    "where user_name = ?";
+            String sql = "SELECT * FROM all_room NATURAL JOIN user_room " +
+                    "WHERE username = ? ";
 
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, username);
@@ -189,7 +219,7 @@ public class DataDaoImpl implements DataDao {
             while (rs.next()){
                 data dataInDB = new data();
                 dataInDB.setUsername(rs.getString("username"));
-                dataInDB.setRoom_id(rs.getInt("room_id"));
+                dataInDB.setRoom_name(rs.getString("room_name"));
                 dataInDB.setTime_start( rs.getString("time_start") );
                 dataInDB.setTime_end( rs.getString("time_end") );
 

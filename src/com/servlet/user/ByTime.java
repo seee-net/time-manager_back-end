@@ -2,6 +2,7 @@ package com.servlet.user;
 
 import com.dao.DataDaoImpl;
 
+import com.util.CheckCookieUtil;
 import com.util.CookieUtil;
 import com.util.JSONUtil;
 import com.util.StreamUtil;
@@ -36,7 +37,7 @@ import java.util.Map;
 
         List aimdata;
 
-        if (CookieUtil.isCookieRight(request, out)) {
+        if (CheckCookieUtil.isCookieRight(request)) {
             //前台传来json
             String jsonReceive = StreamUtil.getInput(in);
 
@@ -64,7 +65,7 @@ import java.util.Map;
 
             StreamUtil.setOutput(out, jsonSend);
         } else {
-            System.out.println("Cookie验证失败，重新登陆");
+            System.out.println("ByTime:Cookie验证失败，重新登陆");
             StreamUtil.setOutput(out, "");
         }
     }

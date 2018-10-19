@@ -15,6 +15,8 @@ import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.util.CheckCookieUtil.isCookieRight;
+
 /**
  * Cookie工具类
  *
@@ -72,43 +74,13 @@ public class CookieUtil {
         return "";
     }
 
-    /**
-     * 检查cookie对不对
-     *
-     * @param request 请求
-     * @return 返回boolean值
-     */
-    public static boolean isCookieRight(HttpServletRequest request,ServletOutputStream out) throws IOException {
-        //获取Cookie
-        String usernameCookie = CookieUtil.getCookieValue(request, "username");
-        String passwordCookie = CookieUtil.getCookieValue(request, "password");
 
-        if (!usernameCookie.equals("") && !passwordCookie.equals("")) {
-            //Cookie存在
-            String username = URLDecoder.decode(usernameCookie, "UTF-8");
-            User userInDB = new UserDaoImpl().getUser(username);
-            //比对用户密码
-            if (passwordCookie.equals(userInDB.getPassword())) {
-                HashMap<String, Object> data = new HashMap<>();
-                data.put("username", userInDB.getUsername());
-                data.put("password", userInDB.getPassword());
-                data.put("userAccess", "true");
-
-                String jsonSend = JSONUtil.objectToJson(data);
-
-                StreamUtil.setOutput(out, jsonSend);
-                return true;
-            }
-            return false;
-        }
-        return false;
-    }
 
     public static void setLogCookie(HttpServletRequest request,
                                    HttpServletResponse response,
                                    ServletInputStream in,
                                    ServletOutputStream out) throws IOException {
-        if(! isCookieRight(request,out) ){
+        if(! isCookieRight(request) ){
             //第一步：不管有无Cookie,都将其置零
             CookieUtil.removeCookie(response, "username");
             CookieUtil.removeCookie(response, "password");
@@ -149,15 +121,6 @@ public class CookieUtil {
                     CookieUtil.addCookie(response, "username", user.getUsername(), 3 * 3600 * 24);
                     CookieUtil.addCookie(response, "password", user.getPassword(), 3 * 3600 * 24);
                 }
-
-                HashMap<String, Object> data = new HashMap<>();
-                data.put("username", user.getUsername());
-                data.put("password", user.getPassword());
-                data.put("userAccess", userAccess);
-
-                String jsonSend = JSONUtil.objectToJson(data);
-
-                StreamUtil.setOutput(out, jsonSend);
 
             }catch(Exception e){
                 e.printStackTrace();
