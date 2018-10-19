@@ -1,9 +1,7 @@
 package com.servlet.data;
 
 import com.dao.DataDaoImpl;
-import com.entity.data;
 import com.util.CheckCookieUtil;
-import com.util.CookieUtil;
 import com.util.JSONUtil;
 import com.util.StreamUtil;
 
@@ -15,12 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
-
-import static com.util.FormDate.setFormDate;
 
 @WebServlet(name = "ByRoom", urlPatterns = "/ByRoom")
 public class ByRoom extends HttpServlet {

@@ -1,21 +1,8 @@
 package com.util;
 
-import com.dao.UserDaoImpl;
-import com.entity.User;
-
-import javax.servlet.ServletInputStream;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
-import java.util.HashMap;
-import java.util.Map;
-
-import static com.util.CheckCookieUtil.isCookieRight;
 
 /**
  * Cookie工具类

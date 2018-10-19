@@ -1,9 +1,7 @@
 package com.servlet.data;
 
 import com.dao.DataDaoImpl;
-
 import com.util.CheckCookieUtil;
-import com.util.CookieUtil;
 import com.util.JSONUtil;
 import com.util.StreamUtil;
 
@@ -17,8 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-
-
 
 @WebServlet(name = "ByTime", urlPatterns = "/ByTime")
     public class ByTime extends HttpServlet {

@@ -1,9 +1,7 @@
 package com.servlet.data;
 
 import com.dao.DataDaoImpl;
-
 import com.util.CheckCookieUtil;
-
 import com.util.JSONUtil;
 import com.util.StreamUtil;
 
@@ -17,7 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URLDecoder;
 import java.util.List;
-
 
 import static com.util.CookieUtil.getCookieValue;
 

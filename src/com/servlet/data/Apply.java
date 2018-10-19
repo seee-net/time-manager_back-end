@@ -2,10 +2,9 @@ package com.servlet.data;
 
 import com.dao.DataDaoImpl;
 import com.util.CheckCookieUtil;
-import com.util.CookieUtil;
 import com.util.JSONUtil;
 import com.util.StreamUtil;
-import  com.entity.data;
+import com.entity.data;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletInputStream;
@@ -16,14 +15,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URLDecoder;
-import java.net.URLEncoder;
-import java.util.Date;
 import java.util.HashMap;
 
 import java.util.Map;
 
 import static com.util.CookieUtil.getCookieValue;
-import static com.util.FormDate.setFormDate;
+
 @WebServlet(name = "Apply", urlPatterns = "/Apply")
 public class Apply extends HttpServlet{
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
