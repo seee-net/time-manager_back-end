@@ -1,4 +1,4 @@
-package com.servlet.user;
+package com.servlet.data;
 
 import com.dao.DataDaoImpl;
 import com.util.CheckCookieUtil;
@@ -50,36 +50,30 @@ public class Apply extends HttpServlet{
             for (String key : dataReceive.keySet()) {
                 switch (key) {
                     case "room_id": {
-                        newdata.setRoom_id((Integer) dataReceive.get("room_id")) ;
+                        newdata.setRoom_id(dataReceive.get("room_id").toString()) ;
                         break;
                     }
                     case "time_start": {
-                        newdata.setTime_start((String) dataReceive.get("time_start")) ;
+                        newdata.setTime_start((String)dataReceive.get("time_start")) ;
                         break;
                     }
                     case "time_end": {
-                        newdata.setTime_end((String) dataReceive.get("time_end")) ;
+                        newdata.setTime_end((String)dataReceive.get("time_end")) ;
                         break;
                     }
                     default:
                         break;
                 }
             }
-            String  cookieuser = getCookieValue(request,"username");
+            String cookieUser = getCookieValue(request,"username");
 
-            newdata.setUsername(URLDecoder.decode(cookieuser, "UTF-8"));
+            newdata.setUsername(URLDecoder.decode(cookieUser, "UTF-8"));
 
             boolean applyResult = new DataDaoImpl().Apply(newdata);
-            System.out.println("Register:正在返回JSON数据");
+
+            System.out.println("Apply:正在返回JSON数据");
             HashMap<String, Object> dataSend = new HashMap<>();
-
-            dataSend.put("username", newdata.getUsername());
-            dataSend.put("room_id", newdata.getRoom_id());
-            dataSend.put("time_start", newdata.getTime_start());
-            dataSend.put("time_end", newdata.getTime_end());
-
             dataSend.put("applyResult", applyResult);
-
             String jsonSend = JSONUtil.objectToJson(dataSend);
 
             StreamUtil.setOutput(out, jsonSend);

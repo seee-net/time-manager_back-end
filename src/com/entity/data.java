@@ -1,20 +1,15 @@
 package com.entity;
 
-import java.util.Date;
-
-import static com.util.FormDate.setFormDate;
-
-
 public class data {
     private String username;
-    private int room_id;
+    private String room_id;
     private String room_name;
     private String time_start;
     private String time_end;
 
     public data()  {
         username = "";
-        room_id = 0;
+        room_id = "";
     }
 
     public String getUsername() {
@@ -25,11 +20,11 @@ public class data {
         username = un;
     }
 
-    public int getRoom_id() {
+    public String getRoom_id() {
         return room_id;
     }
 
-    public void setRoom_id(int un) {
+    public void setRoom_id(String un) {
         room_id = un;
     }
 

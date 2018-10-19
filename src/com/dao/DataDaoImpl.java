@@ -4,6 +4,7 @@ package com.dao;
 //TODO 实现类
 
 import com.dao.impl.DataDao;
+import com.entity.Room;
 import com.entity.data;
 import com.util.DBconn;
 import com.util.FormDate;
@@ -12,7 +13,6 @@ import java.sql.*;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -68,9 +68,11 @@ public class DataDaoImpl implements DataDao {
             String sql = "insert into user_room (username, room_id,time_start,time_end) " +
                     "values(?, ?, ?, ?)";
 
+            
+
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, newdata.getUsername());
-            stmt.setInt(2, newdata.getRoom_id());
+            stmt.setString(2, newdata.getRoom_id());
             stmt.setTimestamp(3, Timestamp.valueOf(newdata.getTime_start()));
             stmt.setTimestamp(4, Timestamp.valueOf(newdata.getTime_end()));
 
@@ -84,10 +86,8 @@ public class DataDaoImpl implements DataDao {
         return rowNom != 0;
     }
 
-
-
     @Override
-    public List<data> byRoom(int aimRoom_id) {
+    public List<data> byRoom(String aimRoom_id) {
         //数据库设置
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -103,7 +103,7 @@ public class DataDaoImpl implements DataDao {
                     "where room_id = ?";
 
             stmt = conn.prepareStatement(sql);
-            stmt.setInt(1, aimRoom_id);
+            stmt.setString(1, aimRoom_id);
 
             rs = stmt.executeQuery();
 
@@ -151,7 +151,7 @@ public class DataDaoImpl implements DataDao {
             while (rs.next()){
                 data dataInDB = new data();
                 dataInDB.setUsername(rs.getString("username"));
-                dataInDB.setRoom_id(rs.getInt("room_id"));
+                dataInDB.setRoom_id(rs.getString("room_id"));
                 dataInDB.setTime_start( rs.getString("time_start") );
                 dataInDB.setTime_end( rs.getString("time_end") );
 
@@ -166,13 +166,13 @@ public class DataDaoImpl implements DataDao {
         return aimdata;
     }
 
-    public HashMap<Integer,String> getRoom(){
+    public List<Room> getRoom(){
         //数据库设置
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
 
-        HashMap<Integer, String> roomData = new HashMap<>();
+        List<Room> roomData = new ArrayList<>();
         try {
             conn = DBconn.getConnection();
 
@@ -183,7 +183,11 @@ public class DataDaoImpl implements DataDao {
             rs = stmt.executeQuery();
 
             while (rs.next()){
-                roomData.put( rs.getInt("room_id"),  rs.getString("room_name") );
+                Room room = new Room();
+                room.setRoomid(rs.getInt("room_id"));
+                room.setRoomname(rs.getString("room_name"));
+
+                roomData.add(room);
             }
         } catch (SQLException e){
             System.err.println("DAO: 数据库错误");

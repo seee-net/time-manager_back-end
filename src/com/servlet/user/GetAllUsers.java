@@ -1,6 +1,6 @@
-//package com.servlet.user;
+package com.servlet.user;
 
-//import com.dao.UserDaoImpl;
+import com.dao.UserDaoImpl;
 
 import com.util.StreamUtil;
 import com.util.JSONUtil;
@@ -15,8 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-//@WebServlet(name = "GetAllUsers",urlPatterns = "/GetAllUsers")
-/* public class GetAllUsers extends HttpServlet {
+@WebServlet(name = "GetAllUsers")
+public class GetAllUsers extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }
@@ -38,4 +38,4 @@ import java.util.List;
             e.printStackTrace();
         }
     }
-}*/
+}

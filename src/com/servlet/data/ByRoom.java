@@ -1,7 +1,7 @@
-package com.servlet.user;
+package com.servlet.data;
 
 import com.dao.DataDaoImpl;
-
+import com.entity.data;
 import com.util.CheckCookieUtil;
 import com.util.CookieUtil;
 import com.util.JSONUtil;
@@ -15,13 +15,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import static com.util.FormDate.setFormDate;
 
-
-@WebServlet(name = "ByTime", urlPatterns = "/ByTime")
-    public class ByTime extends HttpServlet {
+@WebServlet(name = "ByRoom", urlPatterns = "/ByRoom")
+public class ByRoom extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }
@@ -40,36 +42,28 @@ import java.util.Map;
         if (CheckCookieUtil.isCookieRight(request)) {
             //前台传来json
             String jsonReceive = StreamUtil.getInput(in);
-
+            //json转化格式,Date在java.util中，写入数据库可以储存到秒
             Map<String, String> dataReceive = JSONUtil.jsonToMaps(jsonReceive);
-            String aimTimeStart = null;
-            String aimTimeEnd = null;
+            String aimRoom_id = "";
 
             for (String key : dataReceive.keySet()) {
                 switch (key) {
-                    case "aimTimeStart": {
-                        aimTimeStart = dataReceive.get("aimTimeStart");
-                        break;
-                    }
-                    case "aimTimeEnd": {
-                        aimTimeStart = dataReceive.get("aimTimeEnd");
+                    case "aimRoom_id": {
+                        aimRoom_id = dataReceive.get("aimRoom_id");
                         break;
                     }
                     default:
                         break;
                 }
             }
-            aimdata = new DataDaoImpl().byTime(aimTimeStart, aimTimeEnd);
+            aimdata = new DataDaoImpl().byRoom(aimRoom_id);
 
             String jsonSend = JSONUtil.objectToJson(aimdata);
 
             StreamUtil.setOutput(out, jsonSend);
         } else {
-            System.out.println("ByTime:Cookie验证失败，重新登陆");
+            System.out.println("By_room:Cookie验证失败，重新登陆");
             StreamUtil.setOutput(out, "");
         }
     }
 }
-
-
-

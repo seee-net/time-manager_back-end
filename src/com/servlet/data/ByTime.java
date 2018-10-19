@@ -1,9 +1,9 @@
-package com.servlet.user;
+package com.servlet.data;
 
 import com.dao.DataDaoImpl;
 
 import com.util.CheckCookieUtil;
-
+import com.util.CookieUtil;
 import com.util.JSONUtil;
 import com.util.StreamUtil;
 
@@ -15,14 +15,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.net.URLDecoder;
 import java.util.List;
+import java.util.Map;
 
 
-import static com.util.CookieUtil.getCookieValue;
 
-@WebServlet(name = "ShowData", urlPatterns = "/ShowData")
-public class ShowData extends HttpServlet {
+@WebServlet(name = "ByTime", urlPatterns = "/ByTime")
+    public class ByTime extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }
@@ -35,22 +34,42 @@ public class ShowData extends HttpServlet {
         //定义输入输出流
         ServletInputStream in = request.getInputStream();
         ServletOutputStream out = response.getOutputStream();
-        //从Cookie中获取用户名
-        String  cookieuser = getCookieValue(request,"username");
-        String loginUsername = URLDecoder.decode(cookieuser, "UTF-8");
+
+        List aimdata;
 
         if (CheckCookieUtil.isCookieRight(request)) {
-            List aimdata;
-            aimdata = new DataDaoImpl().getUserData(loginUsername);
+            //前台传来json
+            String jsonReceive = StreamUtil.getInput(in);
 
-            System.out.println("ShowData:正在返回JSON数据");
+            Map<String, String> dataReceive = JSONUtil.jsonToMaps(jsonReceive);
+            String aimTimeStart = null;
+            String aimTimeEnd = null;
+
+            for (String key : dataReceive.keySet()) {
+                switch (key) {
+                    case "aimTimeStart": {
+                        aimTimeStart = dataReceive.get("aimTimeStart");
+                        break;
+                    }
+                    case "aimTimeEnd": {
+                        aimTimeStart = dataReceive.get("aimTimeEnd");
+                        break;
+                    }
+                    default:
+                        break;
+                }
+            }
+            aimdata = new DataDaoImpl().byTime(aimTimeStart, aimTimeEnd);
+
             String jsonSend = JSONUtil.objectToJson(aimdata);
 
             StreamUtil.setOutput(out, jsonSend);
         } else {
-            System.out.println("Cookie验证失败，重新登陆");
-            new DataDaoImpl().delOldDate();
+            System.out.println("ByTime:Cookie验证失败，重新登陆");
             StreamUtil.setOutput(out, "");
         }
     }
 }
+
+
+
