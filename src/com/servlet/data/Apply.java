@@ -96,6 +96,11 @@ public class Apply extends HttpServlet{
                         canApply = false;
                         dataSend.put("applyResult", canApply);
                         break;
+                    } else if (startTime.compareTo(item_st) <= 0 && endTime.compareTo(item_et) >= 0){
+                        System.out.println("Apply:正在返回JSON数据-目标开始时间比较结果");
+                        canApply = false;
+                        dataSend.put("applyResult", canApply);
+                        break;
                     }
                 }
 
