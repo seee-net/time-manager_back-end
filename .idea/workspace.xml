@@ -9,8 +9,10 @@
     <list default="true" id="7e0f1c30-0d67-4e1b-9241-6b80ec1fd659" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dao/DataDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dao/DataDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/servlet/data/Apply.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/servlet/data/Apply.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/dao/DataDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/dao/DataDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/servlet/user/GetAllUsers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/servlet/user/GetAllUsers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/dao/DataDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/dao/DataDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/servlet/user/GetAllUsers.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/servlet/user/GetAllUsers.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/web/WEB-INF/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -173,15 +175,15 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="671" />
-          <entry key="md" value="158" />
-          <entry key="txt" value="147" />
+          <entry key="md" value="202" />
+          <entry key="txt" value="160" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="671" />
-          <entry key="Markdown" value="158" />
-          <entry key="PLAIN_TEXT" value="147" />
+          <entry key="Markdown" value="202" />
+          <entry key="PLAIN_TEXT" value="160" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -208,8 +210,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/servlet/data/Apply.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="67" column="54" lean-forward="true" selection-start-line="67" selection-start-column="52" selection-end-line="67" selection-end-column="57" />
+            <state relative-caret-position="243">
+              <caret line="32" column="66" lean-forward="true" selection-start-line="32" selection-start-column="66" selection-end-line="32" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -360,7 +362,7 @@
     <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540002642375" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540002724900" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="ignore_missing_gitignore" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -488,7 +490,7 @@
       <workItem from="1539962521791" duration="3217000" />
       <workItem from="1539966699620" duration="3368000" />
       <workItem from="1539971131871" duration="340000" />
-      <workItem from="1540001746548" duration="891000" />
+      <workItem from="1540001746548" duration="1153000" />
     </task>
     <task id="LOCAL-00001" summary="my_end">
       <created>1539502409157</created>
@@ -532,11 +534,18 @@
       <option name="project" value="LOCAL" />
       <updated>1539972931823</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Readme增加TODO">
+      <created>1540002705544</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1540002705544</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75944000" />
+    <option name="totallyTimeSpent" value="76206000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -551,7 +560,7 @@
     <frame x="0" y="0" width="1920" height="1035" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49721706" visible="true" weight="0.16204691" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49721706" visible="true" weight="0.16204691" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" sideWeight="0.50278294" side_tool="true" weight="0.15245202" />
       <window_info id="Image Layers" order="3" />
@@ -561,7 +570,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32867134" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.32739422" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.32739422" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997773" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -632,7 +641,8 @@
     <MESSAGE value="修改类data为大写 删除todo" />
     <MESSAGE value="修改类data为大写 删除todo 添加数据源" />
     <MESSAGE value="修改一些import" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改一些import" />
+    <MESSAGE value="Readme增加TODO" />
+    <option name="LAST_COMMIT_MESSAGE" value="Readme增加TODO" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/util/StreamUtil.java">
@@ -844,20 +854,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/servlet/data/Apply.java">
+    <entry file="file://$PROJECT_DIR$/src/com/dao/DataDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="67" column="54" lean-forward="true" selection-start-line="67" selection-start-column="52" selection-end-line="67" selection-end-column="57" />
+        <state relative-caret-position="645">
+          <caret line="65" column="53" lean-forward="true" selection-start-line="65" selection-start-column="53" selection-end-line="65" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dao/DataDaoImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/com/servlet/data/Apply.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="65" column="53" lean-forward="true" selection-start-line="65" selection-start-column="53" selection-end-line="65" selection-end-column="53" />
+        <state relative-caret-position="243">
+          <caret line="32" column="66" lean-forward="true" selection-start-line="32" selection-start-column="66" selection-end-line="32" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
