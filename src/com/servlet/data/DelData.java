@@ -46,16 +46,16 @@ public class DelData extends HttpServlet {
 
             for (String key : dataReceive.keySet()) {
                 switch (key) {
-                    case "room_id": {
-                        newdata.setRoom_id(dataReceive.get("room_id").toString());
+                    case "roomid": {
+                        newdata.setRoom_id(dataReceive.get("roomid").toString());
                         break;
                     }
-                    case "time_start": {
-                        newdata.setTime_start((String) dataReceive.get("time_start"));
+                    case "timestart": {
+                        newdata.setTime_start((String) dataReceive.get("timestart"));
                         break;
                     }
-                    case "time_end": {
-                        newdata.setTime_end((String) dataReceive.get("time_end"));
+                    case "timeend": {
+                        newdata.setTime_end((String) dataReceive.get("timeend"));
                         break;
                     }
                     default:
@@ -69,7 +69,7 @@ public class DelData extends HttpServlet {
             boolean delDataResult = new DataDaoImpl().DelData(newdata);
 
             System.out.println("DelData:正在返回JSON数据-删除结果");
-            dataSend.put("applyResult", delDataResult);
+            dataSend.put("delResult", delDataResult);
 
             String jsonSend = JSONUtil.objectToJson(dataSend);
 

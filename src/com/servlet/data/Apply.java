@@ -52,7 +52,7 @@ public class Apply extends HttpServlet{
             //比较时间关系
             if(startTime.compareTo(endTime) >= 0){
                 System.out.println("Apply:正在返回JSON数据-与结束时间比较结果");
-                dataSend.put("applyResult", "例会结束时间错误");
+                dataSend.put("applyResult", false);
             }
             else {
                 Data newdata = new Data();
@@ -88,13 +88,13 @@ public class Apply extends HttpServlet{
 
                     if (startTime.compareTo(item_st) >= 0 && startTime.compareTo(item_et) < 0) {
                         System.out.println("Apply:正在返回JSON数据-目标开始时间比较结果");
-                        dataSend.put("applyResult", "例会开始时间冲突");
                         canApply = false;
+                        dataSend.put("applyResult", canApply);
                         break;
                     } else if (endTime.compareTo(item_st) > 0 && endTime.compareTo(item_et) <= 0) {
                         System.out.println("Apply:正在返回JSON数据-目标结束时间比较结果");
-                        dataSend.put("applyResult", "例会结束时间冲突");
                         canApply = false;
+                        dataSend.put("applyResult", canApply);
                         break;
                     }
                 }

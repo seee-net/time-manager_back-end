@@ -61,8 +61,8 @@ public class DataDaoImpl implements DataDao {
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, deldata.getUsername());
             stmt.setString(2, deldata.getRoom_id());
-            stmt.setTimestamp(3, Timestamp.valueOf(deldata.getTime_start()));
-            stmt.setTimestamp(4, Timestamp.valueOf(deldata.getTime_end()));
+            stmt.setString(3, deldata.getTime_start());
+            stmt.setString(4, deldata.getTime_end());
 
             rowNom = stmt.executeUpdate();
         } catch (SQLException e){
@@ -90,8 +90,8 @@ public class DataDaoImpl implements DataDao {
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, newdata.getUsername());
             stmt.setString(2, newdata.getRoom_id());
-            stmt.setTimestamp(3, Timestamp.valueOf(newdata.getTime_start()));
-            stmt.setTimestamp(4, Timestamp.valueOf(newdata.getTime_end()));
+            stmt.setString(3, newdata.getTime_start());
+            stmt.setString(4, newdata.getTime_end());
 
             rowNom = stmt.executeUpdate();
         } catch (SQLException e){
