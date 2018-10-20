@@ -12,7 +12,6 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.ArrayList;
 
-
 public class DataDaoImpl implements DataDao {
     @Override
     public void delOldDate() {
@@ -62,8 +61,6 @@ public class DataDaoImpl implements DataDao {
 
             String sql = "insert into user_room (username, room_id,time_start,time_end) " +
                     "values(?, ?, ?, ?)";
-
-            
 
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, newdata.getUsername());

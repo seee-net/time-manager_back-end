@@ -16,7 +16,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URLDecoder;
 import java.util.HashMap;
-
 import java.util.Map;
 
 import static com.util.CookieUtil.getCookieValue;
@@ -47,15 +46,15 @@ public class Apply extends HttpServlet{
             for (String key : dataReceive.keySet()) {
                 switch (key) {
                     case "room_id": {
-                        newdata.setRoom_id(dataReceive.get("room_id").toString()) ;
+                        newdata.setRoom_id(dataReceive.get("room_id").toString());
                         break;
                     }
                     case "time_start": {
-                        newdata.setTime_start((String)dataReceive.get("time_start")) ;
+                        newdata.setTime_start((String)dataReceive.get("time_start"));
                         break;
                     }
                     case "time_end": {
-                        newdata.setTime_end((String)dataReceive.get("time_end")) ;
+                        newdata.setTime_end((String)dataReceive.get("time_end"));
                         break;
                     }
                     default:
@@ -76,7 +75,6 @@ public class Apply extends HttpServlet{
             StreamUtil.setOutput(out, jsonSend);
         } else {
             System.out.println("Apply:Cookie验证失败，重新登陆");
-            new DataDaoImpl().delOldDate();
             StreamUtil.setOutput(out, "");
         }
     }
