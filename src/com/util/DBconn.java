@@ -5,8 +5,8 @@ import java.sql.*;
 public class DBconn {
     private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     private static final String DB_URL = "jdbc:mysql://localhost/timetables?serverTimezone=UTC";
-    private static final String USER = "root";
-    private static final String PASS = "@JY0319#";
+    private static final String USER = "timetables";
+    private static final String PASS = "HO5NrDzeEJcpQtw6";
 
     static {
         try {

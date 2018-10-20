@@ -7,6 +7,7 @@ import com.entity.Data;
 
 public interface DataDao {
     void delOldDate();
+    boolean DelData(Data deldata);
     boolean Apply(Data newdata);
 
     List<Data> byRoom(String aimRoom_id);

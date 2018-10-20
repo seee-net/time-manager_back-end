@@ -7,11 +7,9 @@ import com.util.DBconn;
 import com.util.FormDate;
 
 import java.sql.*;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 import java.util.ArrayList;
-
 
 public class DataDaoImpl implements DataDao {
     @Override
@@ -23,9 +21,6 @@ public class DataDaoImpl implements DataDao {
 
         try {
             conn = DBconn.getConnection();
-            //获取当前格式化的时间
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            //String now = sdf.format( new Date());
 
             Calendar now = Calendar.getInstance();
             String year = FormDate.addZero(now.get(Calendar.YEAR));
@@ -49,6 +44,36 @@ public class DataDaoImpl implements DataDao {
         }
     }
 
+    public boolean DelData(Data deldata){
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        int rowNom = 0;
+
+
+        try {
+            conn = DBconn.getConnection();
+
+            String sql = "delete from user_room " +
+                    "where username = ? and room_id = ? and time_start = ? and time_end = ?";
+
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, deldata.getUsername());
+            stmt.setString(2, deldata.getRoom_id());
+            stmt.setString(3, deldata.getTime_start());
+            stmt.setString(4, deldata.getTime_end());
+
+            rowNom = stmt.executeUpdate();
+        } catch (SQLException e){
+            System.err.println("DAO: 数据库错误");
+            e.printStackTrace();
+        } finally {
+            DBconn.closeAll(conn, stmt, rs);
+        }
+        return rowNom != 0;
+    }
+
     public boolean Apply(Data newdata){
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -56,20 +81,17 @@ public class DataDaoImpl implements DataDao {
 
         int rowNom = 0;
 
-        delOldDate();
         try {
             conn = DBconn.getConnection();
 
             String sql = "insert into user_room (username, room_id,time_start,time_end) " +
                     "values(?, ?, ?, ?)";
 
-            
-
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, newdata.getUsername());
             stmt.setString(2, newdata.getRoom_id());
-            stmt.setTimestamp(3, Timestamp.valueOf(newdata.getTime_start()));
-            stmt.setTimestamp(4, Timestamp.valueOf(newdata.getTime_end()));
+            stmt.setString(3, newdata.getTime_start());
+            stmt.setString(4, newdata.getTime_end());
 
             rowNom = stmt.executeUpdate();
         } catch (SQLException e){
