@@ -1,6 +1,5 @@
 package com.dao.impl;
 
-import java.sql.SQLException;
 import java.util.List;
 
 import com.entity.User;
