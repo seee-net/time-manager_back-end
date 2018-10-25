@@ -2,21 +2,35 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
+      <artifact name="demo:war" />
       <artifact name="demo:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e0f1c30-0d67-4e1b-9241-6b80ec1fd659" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/demo_war/demo_war.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/demo_war/demo_war.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/filter/CORSFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/filter/CORSFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/servlet/user/GetUserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/servlet/user/GetUserInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/util/DBconn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/util/DBconn.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/filter/CORSFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/filter/CORSFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/servlet/user/GetUserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/servlet/user/GetUserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/util/DBconn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/util/DBconn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/servlet/user/GetUserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/servlet/user/GetUserInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/util/DBconn.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/util/DBconn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/servlet/data/Apply.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/servlet/data/Apply.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/servlet/data/ByRoom.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/servlet/data/ByRoom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/servlet/data/ByTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/servlet/data/ByTime.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/servlet/data/DelData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/servlet/data/DelData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/servlet/data/GetRoom.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/servlet/data/GetRoom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/servlet/data/ShowData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/servlet/data/ShowData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/servlet/user/ChPass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/servlet/user/ChPass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/servlet/user/GetAllUsers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/servlet/user/GetAllUsers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/servlet/user/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/servlet/user/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/servlet/user/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/servlet/user/Register.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/demo_war_exploded/WEB-INF/classes/com/util/StreamUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/servlet/data/Apply.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/servlet/data/Apply.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/servlet/data/ByRoom.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/servlet/data/ByRoom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/servlet/data/ByTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/servlet/data/ByTime.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/servlet/data/DelData.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/servlet/data/DelData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/servlet/data/GetRoom.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/servlet/data/GetRoom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/servlet/data/ShowData.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/servlet/data/ShowData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/servlet/user/ChPass.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/servlet/user/ChPass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/servlet/user/GetAllUsers.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/servlet/user/GetAllUsers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/servlet/user/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/servlet/user/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/servlet/user/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/servlet/user/Register.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/util/StreamUtil.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/web/WEB-INF/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -182,16 +196,16 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="728" />
+          <entry key="java" value="744" />
           <entry key="md" value="202" />
-          <entry key="txt" value="167" />
+          <entry key="txt" value="181" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="728" />
+          <entry key="JAVA" value="744" />
           <entry key="Markdown" value="202" />
-          <entry key="PLAIN_TEXT" value="167" />
+          <entry key="PLAIN_TEXT" value="181" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -259,8 +273,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/servlet/data/ShowData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="40" column="65" selection-start-line="40" selection-start-column="52" selection-end-line="40" selection-end-column="65" />
+            <state relative-caret-position="510">
+              <caret line="37" column="65" selection-start-line="37" selection-start-column="65" selection-end-line="37" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -268,7 +282,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/servlet/user/Login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1605">
+            <state relative-caret-position="1830">
               <caret line="124" selection-start-line="124" selection-end-line="124" />
             </state>
           </provider>
@@ -277,8 +291,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/servlet/user/GetUserInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+            <state relative-caret-position="315">
+              <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -288,15 +302,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
               <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/util/StreamUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -313,20 +318,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/util/DBconn.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/filter/CORSFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="19" column="78" selection-start-line="19" selection-start-column="78" selection-end-line="19" selection-end-column="78" />
+            <state relative-caret-position="345">
+              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
             </state>
           </provider>
         </entry>
@@ -382,8 +387,8 @@
         <option value="$PROJECT_DIR$/src/com/dao/impl/UserDao.java" />
         <option value="$PROJECT_DIR$/src/com/servlet/user/Login.java" />
         <option value="$PROJECT_DIR$/src/com/servlet/user/GetUserInfo.java" />
-        <option value="$PROJECT_DIR$/src/com/filter/CORSFilter.java" />
         <option value="$PROJECT_DIR$/src/com/util/DBconn.java" />
+        <option value="$PROJECT_DIR$/src/com/filter/CORSFilter.java" />
       </list>
     </option>
   </component>
@@ -401,8 +406,8 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="344" />
-    <option name="y" value="124" />
+    <option name="x" value="621" />
+    <option name="y" value="159" />
     <option name="width" value="1248" />
     <option name="height" value="706" />
   </component>
@@ -427,6 +432,63 @@
             <path>
               <item name="time-manager_back-end" type="b2602c69:ProjectViewProjectNode" />
               <item name="time-manager_back-end" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="time-manager_back-end" type="b2602c69:ProjectViewProjectNode" />
+              <item name="time-manager_back-end" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="time-manager_back-end" type="b2602c69:ProjectViewProjectNode" />
+              <item name="time-manager_back-end" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="time-manager_back-end" type="b2602c69:ProjectViewProjectNode" />
+              <item name="time-manager_back-end" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="filter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="time-manager_back-end" type="b2602c69:ProjectViewProjectNode" />
+              <item name="time-manager_back-end" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="servlet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="time-manager_back-end" type="b2602c69:ProjectViewProjectNode" />
+              <item name="time-manager_back-end" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="servlet" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="time-manager_back-end" type="b2602c69:ProjectViewProjectNode" />
+              <item name="time-manager_back-end" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="servlet" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="time-manager_back-end" type="b2602c69:ProjectViewProjectNode" />
+              <item name="time-manager_back-end" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="time-manager_back-end" type="b2602c69:ProjectViewProjectNode" />
+              <item name="time-manager_back-end" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -440,7 +502,7 @@
     <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540476143712" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540476532161" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="ignore_missing_gitignore" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
@@ -579,7 +641,7 @@
       <workItem from="1540363345395" duration="386000" />
       <workItem from="1540388342573" duration="3170000" />
       <workItem from="1540433595579" duration="1754000" />
-      <workItem from="1540461760651" duration="823000" />
+      <workItem from="1540461760651" duration="1345000" />
     </task>
     <task id="LOCAL-00001" summary="my_end">
       <created>1539502409157</created>
@@ -644,11 +706,18 @@
       <option name="project" value="LOCAL" />
       <updated>1540389264624</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="修复编码问题，生成war文件">
+      <created>1540476188992</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1540476188992</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103665000" />
+    <option name="totallyTimeSpent" value="104187000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -661,8 +730,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="0" width="1932" height="1041" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49721706" visible="true" weight="0.28144988" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49721706" visible="true" weight="0.28144988" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" sideWeight="0.50278294" side_tool="true" weight="0.15245202" />
       <window_info id="Image Layers" order="3" />
@@ -672,7 +742,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32867134" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.516696" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.31069043" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997773" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -747,7 +817,8 @@
     <MESSAGE value="Readme增加TODO" />
     <MESSAGE value="写完了Apply和DelData" />
     <MESSAGE value="修改数据库编码" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改数据库编码" />
+    <MESSAGE value="修复编码问题，生成war文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复编码问题，生成war文件" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/util/MD5sett.java">
@@ -943,22 +1014,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/servlet/data/ShowData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="40" column="65" selection-start-line="40" selection-start-column="52" selection-end-line="40" selection-end-column="65" />
+        <state relative-caret-position="510">
+          <caret line="37" column="65" selection-start-line="37" selection-start-column="65" selection-end-line="37" selection-end-column="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/servlet/user/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1605">
+        <state relative-caret-position="1830">
           <caret line="124" selection-start-line="124" selection-end-line="124" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/servlet/user/GetUserInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+        <state relative-caret-position="315">
+          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -986,17 +1057,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/filter/CORSFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="19" column="78" selection-start-line="19" selection-start-column="78" selection-end-line="19" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/util/DBconn.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/filter/CORSFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
