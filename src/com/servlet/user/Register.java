@@ -2,17 +2,17 @@ package com.servlet.user;
 
 import com.dao.UserDaoImpl;
 import com.entity.User;
-import com.util.StreamUtil;
+import com.util.InputUtil;
 import com.util.JSONUtil;
 
 import javax.servlet.ServletException;
-import javax.servlet.ServletInputStream;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,11 +27,11 @@ public class Register extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json;charset=utf-8");
 
-        ServletInputStream in =request.getInputStream();
-        ServletOutputStream out=response.getOutputStream();
+        BufferedReader in =request.getReader();
+        PrintWriter out=response.getWriter();
         try {
             System.out.println("Register:正在获取表单数据");
-            String jsonReceive = StreamUtil.getInput(in);
+            String jsonReceive = InputUtil.getInput(in);
 
             Map<String, String> dataReceive = JSONUtil.jsonToMaps(jsonReceive);
             String username = "";
@@ -63,7 +63,7 @@ public class Register extends HttpServlet {
             data.put("userRegister", userRegister);
 
             String jsonSend = JSONUtil.objectToJson(data);
-            StreamUtil.setOutput(out, jsonSend);
+            out.print(jsonSend);
         }catch(Exception e){
             e.printStackTrace();
         }

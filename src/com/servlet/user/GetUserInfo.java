@@ -4,15 +4,14 @@ import com.dao.UserDaoImpl;
 import com.entity.User;
 import com.util.CookieUtil;
 import com.util.JSONUtil;
-import com.util.StreamUtil;
 
 import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URLDecoder;
 import java.util.HashMap;
 
@@ -27,7 +26,7 @@ public class GetUserInfo extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json;charset=utf-8");
 
-        ServletOutputStream out=response.getOutputStream();
+        PrintWriter out=response.getWriter();
         try {
             //获取Cookie
             String usernameCookie = CookieUtil.getCookieValue(request, "username");
@@ -54,8 +53,8 @@ public class GetUserInfo extends HttpServlet {
                     data.put("belong", userInDB.getBelong());
 
                     String jsonSend = JSONUtil.objectToJson(data);
-
-                    StreamUtil.setOutput(out, jsonSend);
+                    System.out.println(jsonSend);
+                    out.print(jsonSend);
                 }else {
                     //密码错误
                     //重设Cookie

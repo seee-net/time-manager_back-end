@@ -2,21 +2,19 @@ package com.servlet.data;
 
 import com.dao.DataDaoImpl;
 import com.util.CheckCookieUtil;
-import com.util.FormDate;
 import com.util.JSONUtil;
-import com.util.StreamUtil;
+import com.util.InputUtil;
 import com.entity.Data;
 
 import javax.servlet.ServletException;
-import javax.servlet.ServletInputStream;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URLDecoder;
-import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,13 +33,12 @@ public class Apply extends HttpServlet{
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json;charset=utf-8");
         //定义输入输出流
-        ServletInputStream in = request.getInputStream();
-        ServletOutputStream out = response.getOutputStream();
-
+        BufferedReader in = request.getReader();
+        PrintWriter out = response.getWriter();
 
         if (CheckCookieUtil.isCookieRight(request)) {
             //得到前台json对象，json转化格式
-            String jsonReceive = StreamUtil.getInput(in);
+            String jsonReceive = InputUtil.getInput(in);
             Map<String, Object> dataReceive = JSONUtil.jsonToMaps(jsonReceive);
             //定义json输出对象
             HashMap<String, Object> dataSend = new HashMap<>();
@@ -117,10 +114,10 @@ public class Apply extends HttpServlet{
             }
             //转为json格式，并传给前台
             String jsonSend = JSONUtil.objectToJson(dataSend);
-            StreamUtil.setOutput(out, jsonSend);
+            out.print(jsonSend);
         } else {
             System.out.println("Apply:Cookie验证失败，重新登陆");
-            StreamUtil.setOutput(out, "");
+            out.print("[]");
         }
     }
 }

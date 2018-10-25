@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class DBconn {
     private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    private static final String DB_URL = "jdbc:mysql://localhost/timetables?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8";
+    private static final String DB_URL = "jdbc:mysql://localhost/timetables?serverTimezone=UTC&characterEncoding=utf-8";
     private static final String USER = "timetables";
     private static final String PASS = "HO5NrDzeEJcpQtw6";
 

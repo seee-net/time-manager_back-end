@@ -2,18 +2,18 @@ package com.servlet.user;
 
 import com.dao.UserDaoImpl;
 import com.entity.User;
-import com.util.StreamUtil;
+import com.util.InputUtil;
 import com.util.JSONUtil;
 import com.util.CookieUtil;
 
 import javax.servlet.ServletException;
-import javax.servlet.ServletInputStream;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.util.HashMap;
@@ -32,8 +32,8 @@ public class Login extends HttpServlet {
         response.setContentType("application/json;charset=utf-8");
 
         //定义输入输出流
-        ServletInputStream in =request.getInputStream();
-        ServletOutputStream out=response.getOutputStream();
+        BufferedReader in =request.getReader();
+        PrintWriter out=response.getWriter();
 
         //获取Cookie
         String usernameCookie = CookieUtil.getCookieValue(request, "username");
@@ -61,7 +61,7 @@ public class Login extends HttpServlet {
 
                 String jsonSend = JSONUtil.objectToJson(data);
 
-                StreamUtil.setOutput(out, jsonSend);
+                out.print(jsonSend);
             }else {
                 //密码错误
                 //重设Cookie
@@ -74,7 +74,7 @@ public class Login extends HttpServlet {
             //Cookie不存在
             System.out.println("Login:没有检测到Cookie");
             try {
-                String jsonReceive = StreamUtil.getInput(in);
+                String jsonReceive = InputUtil.getInput(in);
 
                 Map<String, String> dataReceive = JSONUtil.jsonToMaps(jsonReceive);
                 String username = "";
@@ -123,10 +123,10 @@ public class Login extends HttpServlet {
 
                     String jsonSend = JSONUtil.objectToJson(data);
 
-                    StreamUtil.setOutput(out, jsonSend);
+                    out.print(jsonSend);
                 } else {
                     System.out.println("Login:没有检测到表单内容");
-                    StreamUtil.setOutput(out, "");
+                    out.print("[]");
                 }
             }catch(Exception e){
                 e.printStackTrace();
